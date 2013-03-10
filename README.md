@@ -21,12 +21,12 @@ $('#element').prism({
   w: 100, h: 50, d: 75,
   p: 500,
   sides: {
-     top:    'red'
-    ,bottom: 'blue'
-    ,left:   'green'
-    ,right:  'yellow'
-    ,front:  'white'
-    ,back:   'black'
+     top:    'rgba(115, 127, 216, 0.5)'
+    ,bottom: 'rgba(71, 161, 255, 0.5)'
+    ,left:   'rgba(255, 136, 172, 0.5)'
+    ,right:  'rgba(45, 181, 211, 0.5)'
+    ,front:  'blue'
+    ,back:   'red'
   },
   transform: [
     { rotateY: 45 }
