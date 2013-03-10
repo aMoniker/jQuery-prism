@@ -1,5 +1,4 @@
 (function($) {
-
 /*
   $.prism() gives you three ways to make a rectangular prism from a simple <div>
 
@@ -21,7 +20,7 @@
         ,right:  'yellow'
         ,front:  'white'
         ,back:   'black'
-        ,default: 'transparent'
+        ,standard: 'transparent'
       }
       transform: [
         { rotateY: '45deg' }
@@ -33,8 +32,8 @@
         - w,h,d for dimensions (width,height,depth will work too)
         - sides lets you set the CSS background property of any number
            and combination of the prism's sides
-          - you can specify a `default` background under `sides` that will fill in 
-            any sides that you don't specify (a semi-transparent bluish default is used when unspecified)
+          - you can specify a `standard` background under `sides` that will fill in 
+            any sides that you don't specify (a semi-transparent bluish standard is used when unspecified)
         - transform lets you specify any CSS transforms that should be applied
            to the .jquery-prism-shape (which holds all the prism sides)
            this is an array of objects (and not just a simple object)
@@ -91,18 +90,18 @@ $.fn.prism = function(/* args */) {
                                'transform-style': 'preserve-3d',
                           '-moz-transform-style': 'preserve-3d',
                        '-webkit-transform-style': 'preserve-3d',
-                                     'transform': 'perspective(' +prism_spec.p+ 'px)',
-                                '-moz-transform': 'perspective(' +prism_spec.p+ 'px)',
-                             '-webkit-transform': 'perspective(' +prism_spec.p+ 'px)'
                      })
                      .width(prism_spec.w).height(prism_spec.h)
                      .appendTo(this);
 
+  // this gets set at the end after all transforms have been collected
+  var shape_transform = 'perspective(' +prism_spec.p+ 'px)';
+
   // move the sides into place
   ['front', 'back', 'top', 'bottom', 'left', 'right'].forEach(function(side, i) {
-    var $side = $('<div>').addClass('jquery-prism-' + side);
+    var $side = $('<div>').addClass('jquery-prism-' + side + ' jquery-prism-side');
     $side.css({
-       background: prism_spec.sides[side] || prism_spec.sides['default'] || prism_defaults.background
+       background: prism_spec.sides[side] || prism_spec.sides['standard'] || prism_defaults.background
       ,position: 'absolute'
       ,top: 0
       ,left: 0
@@ -150,10 +149,9 @@ $.fn.prism = function(/* args */) {
   });
 
   // apply a custom transform if one was provided
-  var shape_transform = '';
   if (prism_spec.transform) {
     for (var i = 0; i < prism_spec.transform.length; i++) {
-      if (i !== 0) { shape_transform += ' '; }
+      shape_transform += ' ';
       $.each(prism_spec.transform[i], function(property, value) {
         var units = '';
         if ($.isNumeric(value)) {
@@ -188,7 +186,7 @@ var prism_defaults = {
     var b = 238 + Math.round(Math.random() * color_range - (color_range / 2));
     return 'rgba(' +r+ ', ' +g+ ', ' +b+ ', 0.44)';
    }
-  ,perspecive: 500
+  ,perspective: 500
 };
 
 })(jQuery);

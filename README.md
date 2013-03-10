@@ -27,7 +27,7 @@ $('#element').prism({
     ,right:   'rgba(45, 181, 211, 0.5)'
     ,front:   'blue'
     ,back:    'red'
-    ,default: 'transparent'
+    ,standard: 'transparent'
   },
   transform: [
     { rotateY: 45 }
@@ -43,8 +43,8 @@ This last way allows you to define everything about the prism.
   - `width`, `height`, `depth` will work too (if you're not into the whole brevity thing)
 - `p` sets the `perspective` and defaults to 500px
 - `sides` sets the CSS `background` property of any number and combination of the prism's sides
-  - you can set the `default` property of `sides` to give a default background to any sides you don't specify
-  - a (slightly) randomized bluish default color is used for individual sides when `default` is unspecified
+  - you can set the `standard` property of `sides` to give a default background to any sides you don't specify (`standard` is used because `default` itself is a reserved word in javascript)
+  - a (slightly) randomized bluish default color is used for individual sides when `standard` is unspecified
 - `transform` specifies any CSS transforms that should be applied to the to the `.jquery-prism-shape`
   - the `.jquery-prism-shape` div is inserted into the element which $.prism() is called on, and holds all the prism's faces. If you want to apply a transformation yourself to the whole prism, you'd modify this div.
   - `transform` is an array of objects (and not just a simple object) because the order of transforms matters (e.g. for rotation)
