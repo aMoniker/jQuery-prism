@@ -52,3 +52,7 @@ This last way allows you define everything about the prism.
 Currently this should work in any browser that supports 3D CSS. The one exception is (of course) IE10, which supports 3D CSS but does *not* support the necessary `transform-style: preserve-3d` style.
 
 There is a workaround for this, which I plan to add in future versions.
+
+Also, I realize that this plugin can only make *rectangular* prisms. I had originally planned to make a plugin capable of producting n-sided regular prisms, but I couldn't find a clever enough way to create the top and bottom faces (triangles, octogons, etc.) while still allowing arbitrary background properties to be set.
+
+It may be possible in the future when the [shape-outside](http://dev.w3.org/csswg/css3-exclusions/#shape-outside-property) property becomes more well-supported. Or, maybe it's possible now and you know of a clever way. If you do, tell me about it or send a pull request!
