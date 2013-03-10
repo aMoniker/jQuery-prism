@@ -40,6 +40,8 @@
                  then $.prism() will try to choose the correct type based on the transform
 */
 $.fn.prism = function(/* args */) {
+  if (!this.length) { return this; }
+
   var prism_spec = {};
   var args = Array.prototype.slice.call(arguments);
 
