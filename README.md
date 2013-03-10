@@ -18,20 +18,20 @@ This will make a rectangular prism from three given dimensions (as ints)
 #### Deluxe:
 ```
 $('#element').prism({
-  w: 50, h: 25, d: 100,
-  p: 500
+  w: 100, h: 50, d: 75,
+  p: 500,
   sides: {
-     top:    'red',
+     top:    'red'
     ,bottom: 'blue'
     ,left:   'green'
     ,right:  'yellow'
     ,front:  'white'
     ,back:   'black'
-  }
+  },
   transform: [
-    { rotateY: '45deg' }
-   ,{ translateX: -100 }
-   ,{ anyCSStransform: 1337 }
+    { rotateY: 45 }
+   ,{ rotateZ: 45 }
+   ,{ rotateX: 10 }
   ]
 });
 ```
