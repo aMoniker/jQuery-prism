@@ -12,7 +12,7 @@ There are three ways to call $.prism()
   This will make a cube with each side equal to 100px
 
 #### Premium:
-    $('#element').prism(width, height, depth);
+    $('#element').prism(100, 50, 75);
 This will make a rectangular prism from three given dimensions (as ints)
 
 #### Deluxe:
