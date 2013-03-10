@@ -1,7 +1,7 @@
 # jQuery.prism();
 *version 1.0*
 
-**$.prism()** is a simple plugin that helps you create rectangular prisms without any markups.
+**$.prism()** is a simple plugin that helps you create rectangular prisms without requiring complicated markup.
 
 All you need to start is a single `<div>` to act as a container - $.prism() does all the rest.
 
