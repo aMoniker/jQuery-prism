@@ -36,7 +36,7 @@ $('#element').prism({
 });
 ```
 
-This last way allows you define everything about the prism.
+This last way allows you to define everything about the prism.
 
 - `w`, `h`, `d` set the dimensions
   - `width`, `height`, `depth` will work too (if you're not into the whole brevity thing)
