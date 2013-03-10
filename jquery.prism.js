@@ -21,6 +21,7 @@
         ,right:  'yellow'
         ,front:  'white'
         ,back:   'black'
+        ,default: 'transparent'
       }
       transform: [
         { rotateY: '45deg' }
@@ -31,7 +32,9 @@
       this way allows you define everything about the prism
         - w,h,d for dimensions (width,height,depth will work too)
         - sides lets you set the CSS background property of any number
-           and combination of the prism's sides (a default is used when unspecified)
+           and combination of the prism's sides
+          - you can specify a `default` background under `sides` that will fill in 
+            any sides that you don't specify (a semi-transparent bluish default is used when unspecified)
         - transform lets you specify any CSS transforms that should be applied
            to the .jquery-prism-shape (which holds all the prism sides)
            this is an array of objects (and not just a simple object)
@@ -99,7 +102,7 @@ $.fn.prism = function(/* args */) {
   ['front', 'back', 'top', 'bottom', 'left', 'right'].forEach(function(side, i) {
     var $side = $('<div>').addClass('jquery-prism-' + side);
     $side.css({
-       background: prism_spec.sides[side] || prism_defaults.background
+       background: prism_spec.sides[side] || prism_spec.sides['default'] || prism_defaults.background
       ,position: 'absolute'
       ,top: 0
       ,left: 0
